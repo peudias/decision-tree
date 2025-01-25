@@ -3,7 +3,7 @@ from sklearn.tree import DecisionTreeClassifier, export_graphviz
 import graphviz
 
 # Carregar o arquivo Excel
-file_path = "../data/toughestsport.xlsx"
+file_path = "../dataset/toughestsport.xlsx"
 data = pd.read_excel(file_path)
 
 # Preparar os dados
@@ -35,8 +35,8 @@ dot_data = export_graphviz(
 graph = graphviz.Source(dot_data)
 
 # Caminho de saída do arquivo
-output_dot_path = "../data/arvore_decisao_esportes_simplificada.dot"
-output_png_path = "../data/arvore_decisao_esportes_simplificada_final.png"
+output_dot_path = "../dataset/arvore_decisao_esportes_simplificada.dot"
+output_png_path = "../dataset/arvore_decisao_esportes_simplificada_final.png"
 
 # Salvar a árvore simplificada como PNG
 graph.render(filename=output_dot_path, format='png', cleanup=True)

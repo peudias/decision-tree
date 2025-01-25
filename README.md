@@ -33,3 +33,11 @@ Nesta parte, uma árvore de decisão é criada e treinada utilizando um [dataset
   - `openpyxl`: Leitura de arquivos Excel.
 
 ---
+
+### 🔁 Compilação e Execução
+
+Para tanto, temos as seguintes diretrizes de execução:
+
+| Comando               | Função                                                               |
+| --------------------- | -------------------------------------------------------------------- |
+| `python3 filename.py` | Executa o arquivo — Substitua filename pelo nome do arquivo desejado |

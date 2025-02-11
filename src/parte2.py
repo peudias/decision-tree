@@ -1,45 +1,35 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, accuracy_score
 import graphviz
+import os
 
-# Carregar o arquivo Excel
-file_path = "../dataset/toughestsport.xlsx"
-data = pd.read_excel(file_path)
+# Carregar o dataset
+file_path = "../dataset/dataCSV.csv"
+data = pd.read_csv(file_path)
+
+# Criar a variável alvo (Aprovado/Reprovado)
+threshold = 60
+
+data['Grade Category'] = data['Grades'].apply(lambda x: 'Aprovado' if x >= threshold else 'Reprovado')
 
 # Preparar os dados
-X = data[['END', 'STR', 'PWR', 'SPD', 'AGI', 'FLX', 'NER', 'DUR', 'HAN', 'ANA']]
-y_sports = data['SPORT']
+X = data[['Socioeconomic Score', 'Study Hours', 'Sleep Hours', 'Attendance (%)']]
+y = data['Grade Category']
 
 # Dividir os dados em treinamento e teste
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y_sports, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Treinar a árvore de decisão
-tree_sports = DecisionTreeClassifier(criterion='entropy', random_state=42)
-tree_sports.fit(X_train, y_train)
+tree_grades = DecisionTreeClassifier(criterion='entropy', random_state=42)
+tree_grades.fit(X_train, y_train)
 
-# Exportar a árvore para o formato DOT
-dot_data = export_graphviz(
-    tree_sports, 
-    out_file=None, 
-    feature_names=X.columns, 
-    class_names=tree_sports.classes_, 
-    filled=True, 
-    rounded=True, 
-    special_characters=True, 
-    impurity=False,
-    proportion=False
-)
+# Fazer previsões
+y_pred = tree_grades.predict(X_test)
 
-# Criar o gráfico da árvore com o Graphviz
-graph = graphviz.Source(dot_data)
+# Exibir resultados
+print("Relatório de Classificação:")
+print(classification_report(y_test, y_pred))
+print("Acurácia:", accuracy_score(y_test, y_pred))
 
-# Caminho de saída do arquivo
-output_dot_path = "../dataset/arvore_decisao_esportes_simplificada.dot"
-output_png_path = "../dataset/arvore_decisao_esportes_simplificada_final.png"
-
-# Salvar a árvore simplificada como PNG
-graph.render(filename=output_dot_path, format='png', cleanup=True)
-
-# Informar onde o arquivo PNG foi salvo
-print(f"Imagem da árvore salva em: {output_png_path}")

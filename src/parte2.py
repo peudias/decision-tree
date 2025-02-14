@@ -1,9 +1,10 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
+import matplotlib.pyplot as plt
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import accuracy_score
 
 # Carregar o dataset
 file_path = "../dataset/dataCSV.csv"
@@ -43,3 +44,14 @@ print("Acurácia dos modelos:")
 print(f"Árvore de Decisão: {accuracy_tree:.4f}")
 print(f"KNN: {accuracy_knn:.4f}")
 print(f"SVM: {accuracy_svm:.4f}")
+
+# Salvar a Árvore de Decisão como imagem no diretório ../dataset/
+plt.figure(figsize=(12, 8))
+plot_tree(tree_grades, feature_names=X.columns, class_names=tree_grades.classes_, filled=True)
+plt.title("Árvore de Decisão")
+
+output_path = "../dataset/decision_tree.png"
+plt.savefig(output_path, dpi=300, bbox_inches='tight')
+plt.close()  # Fecha a figura para liberar memória
+
+print(f"Imagem da árvore de decisão salva em: {output_path}")

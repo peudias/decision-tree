@@ -5,7 +5,7 @@
         Criado em janeiro de 2025, o projeto de<strong> Árvores de Decisão em Python </strong> foi desenvolvido em virtude de atender as demandas do curso de Inteligência Artificial, ministrado pelo professor <a href="https://www.linkedin.com/in/tiagofga/" target="_blank">Tiago Alves de Oliveira </a> no Centro Federal de Educação Tecnológica de Minas Gerais (<a href="https://www.divinopolis.cefetmg.br/" target="_blank">CEFET-MG</a>).
     </p>
     <p>
-        <a href="https://github.com/LuanLuL/IA_Trabalho_01/blob/master/documentation/Trabalho_03_dupla_Inteligência_Artificial_2024_2_prof_Tiago_Alves.pdf" target="_blank">Acesse a documentação [AQUI]</a>
+        <a href="https://github.com/peudias/decision-tree/blob/main/docs/Trabalho_03_dupla_Intelig%C3%AAncia_Artificial_2024_2_prof_Tiago_Alves.pdf" target="_blank">Acesse a documentação [AQUI]</a>
     </p>
 </section>
 

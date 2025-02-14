@@ -1,4 +1,13 @@
-# 🌳 Árvores de Decisão em Python
+# 🌳 Inteligência Artificial: Árvores de Decisão em Python
+
+  <section>
+    <p>
+        Criado em janeiro de 2025, o projeto de<strong> Árvores de Decisão em Python </strong> foi desenvolvido em virtude de atender as demandas do curso de Inteligência Artificial, ministrado pelo professor <a href="https://www.linkedin.com/in/tiagofga/" target="_blank">Tiago Alves de Oliveira </a> no Centro Federal de Educação Tecnológica de Minas Gerais (<a href="https://www.divinopolis.cefetmg.br/" target="_blank">CEFET-MG</a>).
+    </p>
+    <p>
+        <a href="https://github.com/LuanLuL/IA_Trabalho_01/blob/master/documentation/Trabalho_03_dupla_Inteligência_Artificial_2024_2_prof_Tiago_Alves.pdf" target="_blank">Acesse a documentação [AQUI]</a>
+    </p>
+</section>
 
 ## 🎯 Objetivo
 
@@ -18,7 +27,7 @@ Utiliza-se uma estrutura de funções recursivas para simular uma árvore de dec
 
 Explorando dados reais para aplicar árvores de decisão em problemas práticos.
 
-Nesta parte, uma árvore de decisão é criada e treinada utilizando um [dataset](https://www.kaggle.com/datasets/rishidamarla/toughest-sports-by-skill) chamado **"The World’s Toughest Sports"** disponível no site da **Kaggle**. O dataset contém atributos físicos e habilidades, como força, agilidade e resistência, associados a diferentes esportes. Com o uso das bibliotecas `pandas`, `scikit-learn` e `graphviz`, o modelo identifica padrões nos dados e classifica os esportes de forma precisa. A visualização gerada em formato gráfico facilita a interpretação das decisões tomadas pelo modelo e oferece uma análise clara e detalhada dos resultados.
+Nesta parte, uma árvore de decisão é criada e treinada utilizando um [dataset](https://www.kaggle.com/datasets/stealthtechnologies/predict-student-performance-dataset) chamado **"Predict Student Performance"** disponível no site da **Kaggle**. Esse dataset contém informações sobre o desempenho de estudantes, permitindo a construção de modelos que possam prever seu rendimento acadêmico com base em fatores diversos.
 
 ---
 
